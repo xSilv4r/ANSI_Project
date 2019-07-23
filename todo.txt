@@ -1,0 +1,7 @@
+//STEP 1
+backend register and login JWT and PassportJS
+frontend register and login.
+
+//STEP2
+
+

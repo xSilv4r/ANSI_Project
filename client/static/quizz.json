@@ -1,0 +1,186 @@
+[
+        {
+                "text": "Dans l’ordinateur, le BIOS (Basic Input Output System) est chargé dans la mémoire",
+                "answers": [
+                        "A - de masse",
+                        "B - la RAM (Random Access Memory) ",
+                        "C - la ROM (Read Only Memory)" 
+                ],
+                "answer": "C - la ROM (Read Only Memory)"
+        },
+        {
+                "text": "Le pétatoctet",
+                "answers": [
+                        " A - Correspond à 1012 octets",
+                        "B - Correspond à 1015 octets",
+                        "C - Correspond à 1018 octets",
+                        "D - Correspond à 109 octets "
+                ],
+                "answer": "B - Correspond à 1015 octets"
+        },
+        {
+                "text":"La mémoire cache d’un ordinateur permet",
+                "answers": [
+                        "A - une plus grande sécurité des données",
+                        "B - un accès rapide aux données",
+                        "C - une compression des données"
+                ],
+                "answer": "B - un accès rapide aux données"
+        },
+        {
+                "text":"Une technique consistant à obtenir des informations de la part des utilisateurs par téléphone, courrier électronique ou contact direct. On parle de",
+                "answers": [
+                        "A - Accrochage",
+                        "B - Espionnage",
+                        "C – Ingénierie sociale"
+                ],
+                "answer": "C – Ingénierie sociale"
+        },
+        {
+                "text":"La taille en octet d'une adresse IPv6 est de",
+                "answers": [
+                        "A – 8 octets",
+                        "B – 16 octets",
+                        "C – 32 octets",
+                        "D – 64 octets"
+                ],
+                "answer": "B – 16 octets"
+        },
+        {
+                "text":"Le paquet IPv6 est, comparé à IPv4",
+                "answers": [
+                        "A – 2 fois plus grand",
+                        "B – 4 fois plus grand",
+                        "C – 6 fois plus grand",
+                        "D – 8 fois plus grand"
+                ],
+                "answer": "B – 4 fois plus grand"
+        },
+        {
+                "text":"Dans le domaine de la sécurité informatique, la norme ISO 27018 est relative à",
+                "answers": [
+                        "A - Code de bonne pratique pour le management de la sécurité de l'information",
+                        "B – Code de bonnes pratiques pour la protection des informations personnelles identifiables (PII) dans l'informatique en nuage public",
+                        "C - Techniques d'évaluation des risques"
+                ],
+                "answer": "B – Code de bonnes pratiques pour la protection des informations personnelles identifiables (PII) dans l'informatique en nuage public"
+        },
+        {
+                "text":"Un serveur NAS",
+                "answers": [
+                        "A - est un serveur de calcul parallèle",
+                        "B - est dédié aux calculs 3D",
+                        "C - est un serveur de stockage de données",
+                        "D - est un serveur configuré pour le routage"
+                ],
+                "answer": "C - est un serveur de stockage de données"
+        },
+        {
+                "text":"Quel est le port par default du protocole NTP",
+                "answers":[
+                        "A – 122",
+                        "B – 123",
+                        "C – 124",
+                        "D - 125"
+                ],
+                "answer":"B – 123"
+        },
+        {
+                "text":"Quelle Expression Régulière permet de sélectionner les lignes ne contenant pas de chiffres ?",
+                "answers":[
+                        "A - ^[^0-9]*$",
+                        "B - ^.*[^0-9].*$ ",
+                        "C - ^.*[!0-9].*$",
+                        "D - ^[!0-9]*$"
+                ],
+                "answer":"A - ^[^0-9]*$"
+        },
+        {
+                "text":"Sous Linux, comment se nomme le démon d’impression",
+                "answers":[
+                        "A – lpq",
+                        "B – lpd",
+                        "C – lpc",
+                        "D – lprm"
+                ],
+                "answer":"B – lpd"
+        },
+        {
+                "text":"Quelle commande permet d’afficher les messages de démarrage du système ",
+                "answers":[
+                        "A – mess",
+                        "B – dmesg",
+                        "C – bootmsg",
+                        "D – lsmsg"
+                ],
+                "answer":"B – dmesg"
+        },
+        {
+                "text":"DOS signifie",
+                "answers":[
+                        "A – Data Output System",
+                        "B – Disk Operating System",
+                        "C – Device Open System"
+                ],
+                "answer":"B – Disk Operating System"
+        },
+        {
+                "text":"Comment chercher un paquet précis dans les dépôts Debian",
+                "answers":[
+                        "A –apt-cache search",
+                        "B – apt search",
+                        "C – apt-get search",
+                        "D – apt-get –s"
+                ],
+                "answer":"A –apt-cache search"
+        },
+        {
+                "text":"Sous linux, le fichier /etc/shadow contient ? ",
+                "answers":[
+                        "A - Les logins ou identifiants de l'utilisateur",
+                        "B - Les mots de passe chiffrés de l'utilisateur",
+                        "C - L'adresse mail de l'utilisateur",
+                        "D - Le nombre de jours avant l'expiration des mots de passe"
+                ],
+                "answer":"B - Les mots de passe chiffrés de l'utilisateur"
+        },
+        {
+                "text":"Sous linux, CTRL+ALT+F1 permet",
+                "answers":[
+                        "A - de basculer sur une console en mode commande ",
+                        "B - de quitter un processus",
+                        "C - de sauvegarder la page à l'écran dans un buffe",
+                        "D - de réinitialiser la session"
+                ],
+                "answer":"A - de basculer sur une console en mode commande "
+        },
+        {
+                "text":"MD5 et SHA sont",
+                "answers":[
+                        "A – des algorithmes de cryptographie symétrique",
+                        "B – des fonctions de hashage",
+                        "C – des algorithmes de cryptographies asymétrique",
+                        "D – des PKI usuelles"
+                ],
+                "answer":"B – des fonctions de hashage"
+        },
+        {
+                "text":"Quel test permet de comparer l'égalité numérique des variables A et B ",
+                "answers":[
+                        "A - if [ $A = $B ]; then ... ",
+                        "B - if [ $A == $B ]; then ...",
+                        "C - if [ $A -eq $B]; then ..."
+                ],
+                "answer":"C - if [ $A -eq $B]; then ..."
+        },
+        {
+                "text":"Dans la commande 'p1 || p2' où p1 et p2 sont deux processus, p2 sera exécuté si",
+                "answers":[
+                        "A - p1 se termine normalement ",
+                        "B - p1 se termine anormalement ",
+                        "C - quelque soit le code de retour de p1"
+                ],
+                "answer":"B - p1 se termine anormalement"
+        }
+]
+  
