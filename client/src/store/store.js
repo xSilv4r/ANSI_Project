@@ -83,10 +83,11 @@ export default new Vuex.Store({
             commit("set_profile",resp.data)
           })
         })
-      },
+      }
   },
   getters: {
     isLoggedIn: state => !!state.token,
     authStatus: state => state.status,
+    profile: state=> state.profile
   }
 })

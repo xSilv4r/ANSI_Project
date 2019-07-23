@@ -58,7 +58,7 @@
           </div>
         </div>
         <div class="col-md-9">
-          <div class="profile-content">ena tfol 3ebriiz</div>
+          <div class="profile-content">{{scores}}</div>
         </div>
       </div>
     </div>
@@ -66,17 +66,38 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "Profile",
   data() {
-    return {};
+    return {
+      scores: []
+    };
+  },
+  beforeMount(){
+    this.$store.dispatch("fetchProfile")
   },
   mounted() {
-    this.$store.dispatch("fetchProfile");
+    this.getScore()
   },
   computed: {
     profile() {
       return this.$store.state.profile;
+    }
+  },
+  methods:{
+    getScore(){
+    axios.get("http://localhost:3000/score",{
+      params:{
+        id: this.profile.id
+      }
+    })
+      .then(response => {
+        this.scores = response.quizzScore
+      })
+      .catch(err => {
+        console.log(err);
+      });
     }
   }
 };
@@ -87,7 +108,7 @@ export default {
 .profile-page {
   background: #475d62 url();
   height: 800px;
-  padding:  100px;
+  padding: 100px;
 }
 
 /* Profile container */
@@ -102,9 +123,9 @@ export default {
 }
 
 .profile-userpic img {
-  display:block;
+  display: block;
   margin-left: auto;
-margin-right: auto;
+  margin-right: auto;
   width: 50%;
   height: 50%;
   -webkit-border-radius: 50% !important;
