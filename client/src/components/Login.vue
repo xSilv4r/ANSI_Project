@@ -48,6 +48,10 @@
             name="email"
             placeholder="Email"
           />
+          <small
+            id="emailHelp"
+            class="form-text text-muted"
+          >We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
           <input
@@ -67,7 +71,6 @@
             placeholder="Password"
           />
         </div>
-        <p>We will never share your email address</p>
         <button class="btn btn-primary btn-block" @click="registerSubmit">Register</button>
       </form>
     </div>
@@ -89,7 +92,7 @@ export default {
   },
   methods: {
     onSubmit: function(event) {
-      event.preventDefault()
+      event.preventDefault();
       let email = this.form.email;
       let password = this.form.password;
       this.$store

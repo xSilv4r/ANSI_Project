@@ -1,81 +1,65 @@
 <template>
   <div class="contact">
-    <b-container>
-      <b-row>
-        <b-col>
-          <b-form>
-            <b-form-group
-                id="input-group-1"
-                label="Email address:"
-                label-for="input-1"
-                description="We'll never share your email with anyone else."
-              >
-                <b-form-input
-                  id="input-1"
-                  v-model="form.email"
-                  type="email"
-                  required
-                  placeholder="Enter email"
-                ></b-form-input>
-              </b-form-group>
-
-              <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
-                <b-form-input
-                  id="input-2"
-                  v-model="form.name"
-                  required
-                  placeholder="Enter name"
-                ></b-form-input>
-              </b-form-group>
-
-              <b-form-group id="input-group-3" label="Subject:" label-for="input-3">
-                <b-form-input
-                  id="input-3"
-                  v-model="form.subject"
-                  required
-                  placeholder="Enter subject"
-                ></b-form-input>
-              </b-form-group>
-
-              <b-form-group id="input-group-4" label="Your Message:" label-for="input-4">
-                <b-form-textarea
-                  id="input-4"
-                  v-model="form.message"
-                  required
-                  placeholder="Enter message"
-                  rows="5"
-                  max-rows="5"
-                ></b-form-textarea>
-              </b-form-group>
-
-              <b-button type="submit" variant="primary">Send</b-button>
-              <b-button type="reset" variant="danger">Reset</b-button>
-            </b-form>
-        </b-col>
-      </b-row>
-    </b-container> 
+    <div style="width: 100%">
+      <iframe
+        width="100%"
+        height="400"
+        src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=ansi%2C%20tunis+(ANSI)&amp;ie=UTF8&amp;t=&amp;z=19&amp;iwloc=B&amp;output=embed"
+        frameborder="0"
+        scrolling="no"
+        marginheight="0"
+        marginwidth="0"
+      >
+        <a href="https://www.maps.ie/map-my-route/">Create route map</a>
+      </iframe>
+    </div>
+    <br />
+    <form>
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea class="form-control" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Contact',
-  data () {
+  name: "Contact",
+  data() {
     return {
-      form:{
-        email: '',
-        name: '',
-        subject: '',
-        message: ''
+      form: {
+        email: "",
+        name: "",
+        subject: "",
+        message: ""
       }
-    }
+    };
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.contact{
-    margin: 50px;
+.contact {
+  padding: 100px 200px 100px 200px;
+  height: 1000px;
+  background: #475d62;
+  background-size: cover;
+  position: relative;
+  color: white;
 }
 </style>

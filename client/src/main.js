@@ -7,7 +7,10 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import store from './store/store.js'
 import axios from 'axios'
+import 'chart.js'
+import "hchs-vue-charts"
 
+Vue.use(window.VueCharts)
 Vue.config.productionTip = false
 Vue.prototype.$http = axios;
       const token = localStorage.getItem('token');

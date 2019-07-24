@@ -8,7 +8,7 @@ router.post('/score',(req,res)=>{
         if(err)
         return res.json(err)
         else
-        return res.status(200)
+        return res.json({'success':true})
     })
 })
 
