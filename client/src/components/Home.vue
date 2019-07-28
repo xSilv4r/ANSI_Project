@@ -11,11 +11,11 @@
           <div class="carousel-item active">
             <div class="container">
               <div class="carousel-caption text-left">
-                <h1>ANSI</h1>
-                <p>Bienvenue sur le dispositif d’assistance aux victimes d’actes de cybermalveillance.</p>
+                <h1>SAHER Awareness Platform</h1>
+                <p>Bienvenue sur le dispositif de sensibilisation SAP de l'ANSI.</p>
                 <p>
                   <router-link
-                    class="btn btn-lg btn-primary"
+                    class="btn btn-primary"
                     to="login"
                     role="button"
                   >S'inscrire Ajourd'hui</router-link>
@@ -40,7 +40,7 @@
                 <h1>QCM</h1>
                 <p>Commencer un QCM</p>
                 <p>
-                  <a class="btn btn-lg btn-primary" @click="start" role="button">Commencer</a>
+                  <a class="btn btn-primary" @click="start" role="button">Commencer</a>
                 </p>
               </div>
             </div>
@@ -62,7 +62,7 @@
                 <h1>One more for good measure.</h1>
                 <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                 <p>
-                  <a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a>
+                  <a class="btn btn-primary" href="#" role="button">Browse gallery</a>
                 </p>
               </div>
             </div>
@@ -82,64 +82,25 @@
         <!-- Three columns of text below the carousel -->
         <div class="row">
           <div class="col-lg-4">
-            <svg
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-              role="img"
-              aria-label="Placeholder: 140x140"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#777" />
-              <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-            </svg>
+            <img src="../assets/img/ransomware.png" class="img-circle">
             <h2>Ransomwares</h2>
             <p>Guide de bonnes pratiques pour éviter les Ransomwares.</p>
             <p>
-              <a class="btn btn-secondary" href="#" role="button">Voir plus &raquo;</a>
+              <a class="btn btn-secondary" href="../../static/guides/guide_ransomwares.pdf" role="button">Voir plus &raquo;</a>
             </p>
           </div>
           <!-- /.col-lg-4 -->
           <div class="col-lg-4">
-            <svg
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-              role="img"
-              aria-label="Placeholder: 140x140"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#777" />
-              <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-            </svg>
+            <img src="../assets/img/computer-sec.png" class="img-circle">
             <h2>Sécurité du PC</h2>
             <p>Principaux risques & Mesures de protection pour votre poste de travaille</p>
             <p>
-              <a class="btn btn-secondary" href="#" role="button">View details &raquo;</a>
+              <a class="btn btn-secondary" href="../../static/guides/securite_poste_de_travaille.pdf" role="button">Voir plus &raquo;</a>
             </p>
           </div>
           <!-- /.col-lg-4 -->
           <div class="col-lg-4">
-            <svg
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-              role="img"
-              aria-label="Placeholder: 140x140"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#777" />
-              <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-            </svg>
+            <img src="https://i.ibb.co/tQfyy7M/The-Rise-of-Ransomware-5-Best-Practices-for-Preventing-Ransomware.png" class="img-circle">
             <h2>Placeholder</h2>
             <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
             <p>
@@ -160,23 +121,11 @@
               SAHER MAGAZINE.
               <span class="text-muted">En sa 5éme édition.</span>
             </h2>
-            <p class="lead">Forensics. Analyse à chaud d'une machine Windows</p>
+            <p class="lead">Purement technique, Threat Intel & Forensics</p>
+            <p>L'Agence Nationale de la Sécurité Informatique est fière de vous annoncer la parution de la 5ème édition de SAHER MAGAZINE qui traite les actualités de la Cyber sécurité à l’échelle nationale et internationale.</p>
           </div>
           <div class="col-md-5">
-            <svg
-              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-              role="img"
-              aria-label="Placeholder: 500x500"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#eee" />
-              <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-            </svg>
+            <img src="../assets/img/saher5.jpg" class="img-fluid">
           </div>
         </div>
 
@@ -239,15 +188,13 @@
             </svg>
           </div>
         </div>
-
-        <hr class="featurette-divider" />
-
+        
         <!-- /END THE FEATURETTES -->
       </div>
       <!-- /.container -->
     </div>
 
-    <div class="home">
+    <div class="qcm">
       <div v-if="choice">
         <div class="container">
           <div class="row">
@@ -421,112 +368,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.home {
-  background: #475d62 url();
-  height: 800px;
-  padding: 100px 200px 100px 200px;
-}
-
-.btn-dark {
-  background: #214a80;
-  border: none;
-  border-radius: 4px;
-  padding: 11px;
-  box-shadow: none;
-  margin-top: 26px;
-  text-shadow: none;
-  outline: none;
-}
-
-.jumbotron {
-  color: black;
-}
-
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
-
-body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  color: #5a5a5a;
-}
-
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-
-/* Carousel base class */
-.carousel {
-  margin-bottom: 4rem;
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
-}
-
-/* Declare heights because of positioning of img element */
-.carousel-item {
-  height: 100vh;
-  background-image: url("https://i.ytimg.com/vi/vV6JpyUlLXc/maxresdefault.jpg");
-}
-.carousel-item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 32rem;
-}
-
-/* MARKETING CONTENT
--------------------------------------------------- */
-
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-.marketing h2 {
-  font-weight: 400;
-}
-.marketing .col-lg-4 p {
-  margin-right: 0.75rem;
-  margin-left: 0.75rem;
-}
-
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-}
-
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -0.05rem;
-}
-
-/* RESPONSIVE CSS
--------------------------------------------------- */
-
-@media (min-width: 40em) {
-  /* Bump up size of carousel content */
-  .carousel-caption p {
-    margin-bottom: 1.25rem;
-    font-size: 1.25rem;
-    line-height: 1.4;
-  }
-
-  .featurette-heading {
-    font-size: 50px;
-  }
-}
-
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
-}
 </style>
