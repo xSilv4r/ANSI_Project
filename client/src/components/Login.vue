@@ -1,5 +1,5 @@
 <template>
-  <div class="login-dark">
+  <div id="page-container" class="login-dark">
     <div class="login" v-if="loginForm">
       <form v-on:submit="onSubmit">
         <h2 class="sr-only">Login Form</h2>
@@ -71,7 +71,7 @@
             placeholder="Password"
           />
         </div>
-        <button class="btn btn-primary btn-block" @click="registerSubmit">Register</button>
+        <button class="btn btn-info btn-block" @click="registerSubmit">Register</button>
       </form>
     </div>
   </div>

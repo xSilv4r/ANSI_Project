@@ -37,8 +37,8 @@
             </svg>
             <div class="container">
               <div class="carousel-caption">
-                <h1>QCM</h1>
-                <p>Commencer un QCM</p>
+                <h1>Cyber Awareness Tests</h1>
+                <p>Tester votre connaissance en cybersecurity et la technologie d'information.</p>
                 <p>
                   <a class="btn btn-primary" @click="start" role="button">Commencer</a>
                 </p>
@@ -194,16 +194,16 @@
       <!-- /.container -->
     </div>
 
-    <div class="qcm">
+    <div id="page-container" class="qcm">
       <div v-if="choice">
         <div class="container">
           <div class="row">
 
             <div class="col-md-3">
               <div class="card" style="width: 14rem;">
-                <img src="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png" class="card-img-top" alt="..." />
+                <img src="../assets/img/gen.png" class="card-img-top" alt="..." />
                 <div class="card-body">
-                  <h5 class="card-title">QCM 1</h5>
+                  <h5 class="card-title">Généralités</h5>
                   <p
                     class="card-text">Facile</p>
                   <button @click="otherQuestions" class="btn btn-primary">Commencer</button>
@@ -213,9 +213,9 @@
 
             <div class="col-md-3">
               <div class="card" style="width: 14rem;">
-                <img src="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png" class="card-img-top" alt="..." />
+                <img src="../assets/img/sec.jpeg" class="card-img-top" alt="..." />
                 <div class="card-body">
-                  <h5 class="card-title">QCM 2</h5>
+                  <h5 class="card-title">Sécurité</h5>
                   <p
                     class="card-text">Moyen</p>
                   <a href="#" class="btn btn-primary">Commencer</a>
@@ -225,9 +225,9 @@
             
             <div class="col-md-3">
               <div class="card" style="width: 14rem;">
-                <img src="http://www.stleos.uq.edu.au/wp-content/uploads/2016/08/image-placeholder-350x350.png" class="card-img-top" alt="..." />
+                <img src="../assets/img/linux.jpeg" class="card-img-top" alt="..." />
                 <div class="card-body">
-                  <h5 class="card-title">QCM 3</h5>
+                  <h5 class="card-title">Linux</h5>
                   <p
                     class="card-text">Difficile</p>
                   <a href="#" class="btn btn-primary">Commencer</a>
@@ -280,6 +280,7 @@
 
 <script>
 import axios from "axios";
+import * as score from '../services/ScoreManager'
 export default {
   name: "Home",
   data() {
@@ -347,20 +348,7 @@ export default {
       console.log(this.correct + " " + this.perc);
     },
     saveScore() {
-      this.$store.dispatch("fetchProfile");
-      let id = this.$store.state.profile.id;
-      let score = this.correct;
-      axios({
-        url: "http://localhost:3000/score",
-        data: { id, score },
-        method: "POST"
-      })
-        .then(() => {
-          this.$router.push("/profile");
-        })
-        .catch(err => {
-          console.log(err);
-        });
+        score.setScore(this.correct)
     }
   }
 };

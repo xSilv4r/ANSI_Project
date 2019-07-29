@@ -59,7 +59,7 @@
         </div>
         <div class="col-md-9">
           <div class="profile-content">
-            <div class="card">
+<!--             <div class="card">
               <div class="card-body">
                 <h2 class="card-title">Doughnut</h2>
               </div>
@@ -72,11 +72,11 @@
                   :option="option"
                 />
               </div>
-            </div>
+            </div> -->
 
             <div class="card">
               <div class="card-body">
-                <h2 class="card-title">Line</h2>
+                <h2 class="card-title">Overview</h2>
 
                 <div class="btn-group btn-group-toggle">
                   <label
@@ -114,6 +114,8 @@
 <script>
 import axios from "axios";
 import * as auth from "../services/AuthService";
+import * as score from "../services/ScoreManager";
+
 export default {
   name: "Profile",
   data() {
@@ -121,7 +123,7 @@ export default {
       scores: [],
       datasets: [
         {
-          data: [10, 20, 40],
+          data: [10,13,17,18,19],
           backgroundColor: ["#f36e60", "#ffdb3b", "#185190"],
           hoverBackgroundColor: ["#fbd2cd", "#fef5c9", "#d1e3f7"]
         }
@@ -163,31 +165,15 @@ export default {
       radio: "day"
     };
   },
-  mounted() {
-    this.getScore();
+  created() {
+    score.getScore().then(res=>{Array.prototype.push.apply(this.scores, res)})
   },
   computed: {
-     username() {
+    username() {
       return auth.getUsername();
     },
-    id(){
+    id() {
       return auth.getId();
-    }
-  },
-  methods: {
-    getScore() {
-      axios
-        .get("http://localhost:3000/score", {
-          params: {
-            id: id()
-          }
-        })
-        .then(response => {
-          this.scores = response.quizzScore;
-        })
-        .catch(err => {
-          console.log(err);
-        });
     }
   }
 };

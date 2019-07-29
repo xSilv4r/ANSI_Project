@@ -1,5 +1,4 @@
 const router = require('express').Router()
-const scoreManager = require('../services/scoreManager')
 
 router.post('/score',(req,res)=>{
     id=req.body.id
@@ -13,16 +12,13 @@ router.post('/score',(req,res)=>{
 })
 
 router.get('/score',(req,res)=>{
-    if(id=req.query.id){
+    id=req.query.id
     User.findById(id,function(err,resp){
         if(err)
         return res.json(err)
         else
-        return res.status(200).send(resp.quizzScores)
+        return res.json(resp.quizzScores)
     })
-    }
-    else
-    console.log('got no id')
 })
 
 module.exports=router

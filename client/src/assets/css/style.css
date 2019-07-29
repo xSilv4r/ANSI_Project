@@ -11,6 +11,10 @@
     width: 100%;
     overflow: auto;
   }
+
+  div#page-container{
+    background: #475d62 url();
+  }
   /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
   
@@ -65,7 +69,11 @@
   }
 
   .qcm div {
-    padding: 15px;
+    margin: 15px;
+  }
+
+  .qcm img {
+    height: 180px;
   }
 
     /* CUSTOMIZE THE LOGIN
