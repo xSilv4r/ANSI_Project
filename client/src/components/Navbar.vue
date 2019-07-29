@@ -40,7 +40,7 @@
               <i style="font-size:20px;" class="icon ion-ios-contact"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <router-link class="dropdown-item" to="profile">Profile</router-link>
+              <router-link class="dropdown-item" to="profile">{{username}}</router-link>
               <a class="dropdown-item" href="#">Settings</a>
               <a class="dropdown-item" @click="logout">Logout</a>
             </div>
@@ -59,3 +59,27 @@
     </nav>
   </div>
 </template>
+
+<script>
+import * as auth from "../services/AuthService";
+export default {
+  data() {
+    return {};
+  },
+  computed: {
+    username() {
+      return auth.getUsername();
+    },
+    isLoggedIn: function() {
+      return this.$store.getters.isLoggedIn;
+    }
+  },
+  methods: {
+    logout: function() {
+      this.$store.dispatch("logout").then(() => {
+        this.$router.push("/login");
+      });
+    }
+  }
+};
+</script>

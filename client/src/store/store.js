@@ -6,9 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     status: '',
-    profile: {},
     token: localStorage.getItem('token') || '',
-    user: {}
   },
   mutations: {
     auth_request(state) {
@@ -17,10 +15,9 @@ export default new Vuex.Store({
       registration_success(state){
         state.status = 'registred'
       },
-      auth_success(state, token, user) {
+      auth_success(state, token) {
         state.status = 'success'
         state.token = token
-        state.user = user
       },
       auth_error(state) {
         state.status = 'error'
@@ -28,10 +25,7 @@ export default new Vuex.Store({
       logout(state) {
         state.status = ''
         state.token = ''
-      },
-      set_profile(state,data){
-        state.profile=data
-      },
+      }
   },
   actions: {
     login({ commit }, user) {
@@ -40,11 +34,10 @@ export default new Vuex.Store({
           axios({ url: 'http://localhost:3000/login', data: user, method: 'POST' })
             .then(resp => {
               const token = resp.data.token
-              const user = resp.data.user
               localStorage.setItem('token', token)
               // Add the following line:
               axios.defaults.headers.common['Authorization'] = token
-              commit('auth_success', token, user)
+              commit('auth_success', token)
               resolve(resp)
             })
             .catch(err => {
@@ -75,19 +68,10 @@ export default new Vuex.Store({
           delete axios.defaults.headers.common['Authorization']
           resolve()
         })
-      },
-      fetchProfile({ commit }){
-        return new Promise((resolve,reject)=>{
-          axios({url:'http://localhost:3000/profile', method: 'GET'})
-          .then((resp)=>{
-            commit("set_profile",resp.data)
-          })
-        })
       }
   },
   getters: {
     isLoggedIn: state => !!state.token,
     authStatus: state => state.status,
-    profile: state=> state.profile
   }
 })

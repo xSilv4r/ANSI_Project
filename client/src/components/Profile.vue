@@ -15,8 +15,8 @@
             <!-- END SIDEBAR USERPIC -->
             <!-- SIDEBAR USER TITLE -->
             <div class="profile-usertitle">
-              <div class="profile-usertitle-name">{{profile.name}}</div>
-              <div class="profile-usertitle-job">{{profile.id}}</div>
+              <div class="profile-usertitle-name">{{username}}</div>
+              <div class="profile-usertitle-job">{{id}}</div>
             </div>
             <!-- END SIDEBAR USER TITLE -->
             <!-- SIDEBAR BUTTONS -->
@@ -113,6 +113,7 @@
 
 <script>
 import axios from "axios";
+import * as auth from "../services/AuthService";
 export default {
   name: "Profile",
   data() {
@@ -162,15 +163,15 @@ export default {
       radio: "day"
     };
   },
-  beforeMount() {
-    this.$store.dispatch("fetchProfile");
-  },
   mounted() {
     this.getScore();
   },
   computed: {
-    profile() {
-      return this.$store.state.profile;
+     username() {
+      return auth.getUsername();
+    },
+    id(){
+      return auth.getId();
     }
   },
   methods: {
@@ -178,7 +179,7 @@ export default {
       axios
         .get("http://localhost:3000/score", {
           params: {
-            id: this.profile.id
+            id: id()
           }
         })
         .then(response => {
