@@ -8,7 +8,7 @@
           <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          <div class="carousel-item carousel-first active">
             <div class="container">
               <div class="carousel-caption text-left">
                 <h1>SAHER Awareness Platform</h1>
@@ -16,7 +16,7 @@
                 <p>
                   <router-link
                     class="btn btn-primary"
-                    to="login"
+                    to="authentication"
                     role="button"
                   >S'inscrire Ajourd'hui</router-link>
                 </p>
@@ -118,7 +118,7 @@
         <div class="row featurette">
           <div class="col-md-7">
             <h2 class="featurette-heading">
-              SAHER MAGAZINE.
+              SAHER MAGAZINE
               <span class="text-muted">En sa 5éme édition.</span>
             </h2>
             <p class="lead">Purement technique, Threat Intel & Forensics</p>
@@ -134,28 +134,17 @@
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading">
-              Oh yeah, it’s that good.
-              <span class="text-muted">See for yourself.</span>
+               Toufoula Kids 
+              <span class="text-muted">Sensibilisez vos enfants aux Cyber-risques.</span>
             </h2>
             <p
               class="lead"
-            >Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            > Dans le cadre de ses missions de sensibilisation pour la Protection de l'Enfant En Ligne, l'Agence Nationale de la Sécurité Informatique innove et présente un contenu dédié aux enfants et aux parents qui se base sur la technologie de la Réalité Augmentée dans une application mobile "Toufoula kids" , développée par une startup tunisienne.
+
+L'ANSI, en partenariat avec la startup tunisienne, a développé un module intitulé " L'utilisation vigilante de l'Internet " dont le contenu interactif est dédié à la sensibilisation des enfants ainsi que leurs parents aux risques qu'ils encourent sur internet sous forme d'un jeu éducatif comprenant des animations, un quiz ainsi que des #bonnes pratiques pour garantir une navigation sécurisée sur internet. À ce titre, l'Agence Nationale de la Sécurité Informatique a participé activement à l’élaboration et la conception de ce contenu relatif à la sécurité informatique. </p>
           </div>
           <div class="col-md-5 order-md-1">
-            <svg
-              class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-              role="img"
-              aria-label="Placeholder: 500x500"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#eee" />
-              <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-            </svg>
+            <img src="../assets/img/toufoula.png" class="img-fluid">
           </div>
         </div>
 
@@ -194,7 +183,7 @@
       <!-- /.container -->
     </div>
 
-    <div id="page-container" class="qcm">
+    <div id="" class="qcm">
       <div v-if="choice">
         <div class="container">
           <div class="row">
@@ -279,7 +268,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import * as score from '../services/ScoreManager'
 export default {
   name: "Home",
@@ -317,7 +305,7 @@ export default {
         this.intro = false;
         this.choice = true;
       } else {
-        this.$router.push("/login");
+        this.$router.push("/authentication");
       }
     },
     victimQuestions() {

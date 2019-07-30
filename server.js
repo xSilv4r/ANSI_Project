@@ -7,6 +7,7 @@ const morgan = require('morgan')
 const passport=require('passport')
 
 const app = express()
+app.use(morgan('combined'))
 app.use(passport.initialize());
 require('./config/passport_config')(passport);
 app.use(cors())

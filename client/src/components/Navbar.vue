@@ -13,13 +13,15 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <router-link class="navbar-brand" to="/">SAP</router-link>
+        <router-link class="navbar-brand" to="/">
+            <img src="../assets/logo.png" alt="Logo" style="width:40px;"> SAP
+            </router-link>
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
           <li class="nav-item active">
             <router-link class="nav-link" to="/">Acceuil</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" v-if="!isLoggedIn" to="login">Connection</router-link>
+            <router-link class="nav-link" v-if="!isLoggedIn" to="authentication">Connection</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="magazines">Magazines</router-link>
@@ -37,10 +39,10 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <i style="font-size:20px;" class="icon ion-ios-contact"></i>
+              {{username}}
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <router-link class="dropdown-item" to="profile">{{username}}</router-link>
+              <router-link class="dropdown-item" to="profile">Profile</router-link>
               <a class="dropdown-item" href="#">Settings</a>
               <a class="dropdown-item" @click="logout">Logout</a>
             </div>
@@ -77,7 +79,7 @@ export default {
   methods: {
     logout: function() {
       this.$store.dispatch("logout").then(() => {
-        this.$router.push("/login");
+        this.$router.push("/authentication");
       });
     }
   }

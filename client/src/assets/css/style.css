@@ -31,7 +31,8 @@
   /* Declare heights because of positioning of img element */
   .carousel-item {
     height: 100vh;
-    background-image: url("https://i.ytimg.com/vi/vV6JpyUlLXc/maxresdefault.jpg");
+    background-position: center;
+    background-image: url("../img/bg.jpg");
   }
   .carousel-item > img {
     position: absolute;

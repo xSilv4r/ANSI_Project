@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/Login'
-import Register from '@/components/Register'
 import Home from '@/components/Home'
 import Contact from '@/components/Contact'
 import Profile from '@/components/Profile'
 import Authentication from '@/components/Authentication'
+import Magazines from '@/components/Magazines'
 
 
 Vue.use(Router)
@@ -17,16 +16,6 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: Login
-    },
-    {
-      path: '/register',
-      name: 'register',
-      component: Register
     },
     {
       path: '/profile',
@@ -42,6 +31,11 @@ export default new Router({
       path: '/authentication',
       name:'authentication',
       component: Authentication
+    },
+    {
+      path: '/magazines',
+      name:'magazines',
+      component: Magazines
     }
   ]
 })

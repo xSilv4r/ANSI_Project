@@ -1,85 +1,79 @@
 <template>
-  <div class="authentication">
-    <b-container>
-      <b-row>
-        <b-col>
-          <div v-if="loginForm">
-            <b-form>
-              <b-form-group
-                id="f1"
-                label="Email address:"
-                description="We'll never share your email with anyone else."
-              >
-                <b-form-input
-                  id="input-1"
-                  v-model="form.email"
-                  type="email"
-                  required
-                  placeholder="Enter email"
-                ></b-form-input>
-              </b-form-group>
+  <div id="page-container" class="login-dark">
+    <div class="login" v-if="loginForm">
+      <form v-on:submit="onSubmit">
+        <h2 class="sr-only">Login Form</h2>
+        <div class="illustration">
+          <i class="icon ion-ios-lock"></i>
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="email"
+            v-model="form.email"
+            name="email"
+            placeholder="Email"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="password"
+            v-model="form.password"
+            name="password"
+            placeholder="Password"
+          />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-info btn-block" type="submit">Log In</button>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success btn-block" @click="register">Register</button>
+        </div>
+        <a href="#" class="forgot">Forgot your email or password?</a>
+      </form>
+    </div>
 
-              <b-form-group id="f2" label="Password:">
-                <b-form-input
-                  id="input-2"
-                  v-model="form.password"
-                  type="password"
-                  required
-                  placeholder="********"
-                ></b-form-input>
-              </b-form-group>
-
-              <b-button v-on:click="loginSubmit" variant="primary">Login</b-button>
-              <b-button v-on:click="register" variant="success">Register</b-button>
-            </b-form>
-          </div>
-        </b-col>
-      </b-row>
-      <b-row>
-        <b-col>
-          <div v-if="registerForm">
-            <b-form>
-              <b-form-group
-                id="f1"
-                label="Email address:"
-                description="We'll never share your email with anyone else."
-              >
-                <b-form-input
-                  id="input-1"
-                  v-model="form.email"
-                  type="email"
-                  required
-                  placeholder="Enter email"
-                ></b-form-input>
-              </b-form-group>
-
-              <b-form-group id="f1" label="Name:">
-                <b-form-input
-                  id="input-1"
-                  v-model="form.name"
-                  type="text"
-                  required
-                  placeholder="Enter your name"
-                ></b-form-input>
-              </b-form-group>
-
-              <b-form-group id="f2" label="Password:">
-                <b-form-input
-                  id="input-2"
-                  v-model="form.password"
-                  type="password"
-                  required
-                  placeholder="********"
-                ></b-form-input>
-              </b-form-group>
-
-              <b-button v-on:click="register" variant="primary">Register</b-button>
-              <b-button type="reset" variant="danger">Reset</b-button>
-            </b-form>
-          </div>
-        </b-col>
-      </b-row>
-    </b-container>
+    <div class="register" v-if="registerForm">
+      <form method="post">
+        <h2 class="sr-only">Register Form</h2>
+        <div class="illustration">
+          <i class="icon ion-ios-person-add"></i>
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="email"
+            v-model="form.email"
+            name="email"
+            placeholder="Email"
+          />
+          <small
+            id="emailHelp"
+            class="form-text text-muted"
+          >We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            v-model="form.name"
+            name="name"
+            placeholder="name"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="password"
+            v-model="form.password"
+            name="password"
+            placeholder="Password"
+          />
+        </div>
+        <button class="btn btn-info btn-block" @click="registerSubmit">Register</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -98,7 +92,8 @@ export default {
     };
   },
   methods: {
-    loginSubmit: function() {
+    onSubmit: function(event) {
+      event.preventDefault();
       let email = this.form.email;
       let password = this.form.password;
       this.$store
@@ -115,7 +110,7 @@ export default {
         .then(() => this.$router.push("/"))
         .catch(err => console.log(err));
     },
-    register() {
+    register: function() {
       this.loginForm = false;
       this.registerForm = true;
     }
@@ -125,7 +120,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.authentication {
-  margin: 50px;
-}
 </style>
